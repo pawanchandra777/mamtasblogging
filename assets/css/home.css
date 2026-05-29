@@ -1,0 +1,294 @@
+/* ===================================
+   YOUTUBE STYLE VIDEO GRID
+=================================== */
+
+.video-section{
+    padding:25px 0 40px;
+}
+
+
+/* GRID SPACING */
+
+.video-row{
+    row-gap:30px;
+}
+
+
+/* ===================================
+   VIDEO CARD
+=================================== */
+
+.video-card{
+    border:none;
+    background:transparent;
+    transition:0.3s;
+}
+
+.video-card:hover{
+    transform:translateY(-4px);
+}
+
+
+/* ===================================
+   THUMBNAIL AREA
+=================================== */
+
+.thumbnail-box{
+    position:relative;
+    border-radius:14px;
+    overflow:hidden;
+}
+
+.thumbnail-box img{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+    transition:0.4s;
+}
+
+.video-card:hover .thumbnail-box img{
+    transform:scale(1.05);
+}
+
+
+/* DARK OVERLAY */
+
+.thumbnail-overlay{
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,0.65),
+        rgba(0,0,0,0.05)
+    );
+}
+
+
+/* ===================================
+   PLAY BUTTON
+=================================== */
+
+.play-btn{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+
+    width:58px;
+    height:58px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,0.15);
+
+    backdrop-filter:blur(8px);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+    font-size:22px;
+
+    opacity:0;
+
+    transition:0.3s;
+}
+
+.video-card:hover .play-btn{
+    opacity:1;
+}
+
+
+/* ===================================
+   DURATION
+=================================== */
+
+.video-duration{
+    position:absolute;
+    bottom:12px;
+    right:12px;
+
+    background:rgba(0,0,0,0.8);
+
+    color:white;
+
+    font-size:12px;
+    font-weight:600;
+
+    padding:4px 8px;
+
+    border-radius:6px;
+}
+
+
+/* ===================================
+   VIDEO INFO AREA
+=================================== */
+
+.video-info{
+    display:flex;
+    gap:12px;
+
+    padding-top:14px;
+}
+
+
+/* CHANNEL LOGO */
+
+.channel-logo{
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    background:#ff0000;
+
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-weight:bold;
+    font-size:18px;
+
+    flex-shrink:0;
+}
+
+
+/* ===================================
+   VIDEO CONTENT
+=================================== */
+
+.video-content{
+    flex-grow:1;
+}
+
+
+/* TITLE */
+
+.video-title{
+    font-size:17px;
+    font-weight:600;
+    line-height:1.5;
+
+    margin-bottom:6px;
+
+    color:#111;
+
+    overflow:hidden;
+
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+}
+
+
+/* META */
+
+.video-meta{
+    color:#666;
+    font-size:14px;
+    line-height:1.5;
+}
+
+
+/* ===================================
+   SECTION TITLE
+=================================== */
+
+.section-title{
+    font-size:34px;
+    font-weight:700;
+    margin-bottom:5px;
+}
+
+.section-subtitle{
+    color:#666;
+    margin-bottom:25px;
+}
+
+
+/* ===================================
+   HERO
+=================================== */
+
+.hero{
+    height:520px;
+    background:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop') center;
+    background-size:cover;
+    position:relative;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+
+    background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    text-align:center;
+    color:white;
+
+    padding-top:180px;
+}
+
+
+/* ===================================
+   FOOTER
+=================================== */
+
+.footer{
+    background:#111;
+    color:white;
+    padding:45px;
+    margin-top:50px;
+}
+
+
+/* ===================================
+   WHATSAPP
+=================================== */
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:999;
+}
+
+.whatsapp img{
+    width:58px;
+}
+
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media(max-width:768px){
+
+.thumbnail-box img{
+    height:190px;
+}
+
+.hero{
+    height:420px;
+}
+
+.hero-content{
+    padding-top:140px;
+}
+
+.hero-content h1{
+    font-size:40px;
+}
+
+}
+

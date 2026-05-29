@@ -1,0 +1,91 @@
+/* =========================
+   VIDEO PAGE
+========================= */
+
+.video-page{
+    background:#ffffff;
+    padding:25px;
+    border-radius:15px;
+}
+
+
+/* =========================
+   VIDEO PLAYER
+========================= */
+
+.video-frame iframe{
+    border:none;
+    border-radius:12px;
+}
+
+
+/* =========================
+   VIDEO TITLE
+========================= */
+
+.video-title{
+    font-size:32px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+
+/* =========================
+   TAGLINE
+========================= */
+
+.video-tagline{
+    color:#666;
+    margin-bottom:20px;
+}
+
+
+/* =========================
+   STORY
+========================= */
+
+.video-story{
+    line-height:1.8;
+    color:#333;
+}
+
+
+/* =========================
+   LIKE BUTTONS
+========================= */
+
+.video-actions button{
+    margin-right:10px;
+}
+
+
+/* =========================
+   COMMENT BOX
+========================= */
+
+.comment-card{
+    border:none;
+    border-radius:12px;
+    box-shadow:0 0 10px rgba(0,0,0,0.05);
+}
+
+
+/* =========================
+   RELATED VIDEOS
+========================= */
+
+.related-card{
+    border:none;
+    border-radius:12px;
+    overflow:hidden;
+    transition:0.3s;
+}
+
+.related-card:hover{
+    transform:translateY(-5px);
+}
+
+.related-card img{
+    height:180px;
+    object-fit:cover;
+}

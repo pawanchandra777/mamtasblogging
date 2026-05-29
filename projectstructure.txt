@@ -1,0 +1,20 @@
+MamtasBlogging/
+│
+├── index.php
+├── config.php
+├── header.php
+├── footer.php
+│
+├── admin/
+│   ├── login.php
+│   ├── dashboard.php
+│   ├── add-video.php
+│   ├── manage-posts.php
+│
+├── uploads/
+│
+├── css/
+├── js/
+├── images/
+│
+└── database/
