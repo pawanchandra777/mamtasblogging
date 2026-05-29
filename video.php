@@ -89,8 +89,10 @@ if (isset($_POST['comment_btn'])) {
 ========================= */
 
 $stmt = $conn->prepare("
-    SELECT * FROM videos
+    SELECT *
+    FROM videos
     WHERE id = ?
+    AND status = 'published'
 ");
 
 $stmt->bind_param("i", $id);
@@ -351,8 +353,10 @@ Related Videos
 $category = $row['category'];
 
 $stmt = $conn->prepare("
-    SELECT * FROM videos
+    SELECT *
+    FROM videos
     WHERE category = ?
+    AND status = 'published'
     AND id != ?
     ORDER BY id DESC
     LIMIT 4

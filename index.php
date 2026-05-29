@@ -1,15 +1,4 @@
-<?php
 
-include 'includes/config.php';
-
-$social = mysqli_fetch_assoc(
-    mysqli_query(
-        $conn,
-        "SELECT * FROM social_links LIMIT 1"
-    )
-);
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -169,25 +158,38 @@ Search
 
 <div class="hero-content">
 
-<h1 class="display-3 fw-bold">
+<h1 class="display-2 fw-bold">
 
-MamtasBlogging
+🏛 Explore Sanatan Culture
 
 </h1>
 
-<p class="lead">
+<p class="lead mt-3">
 
-Tour • Travel • Dharmik Stories
+Discover Ancient Temples, Sacred Stories,
+Spiritual Journeys and Hidden Heritage of India
 
 </p>
 
+<div class="mt-4">
+
 <a
 href="#latest"
-class="btn btn-danger btn-lg mt-3">
+class="btn btn-danger btn-lg me-2">
 
 Explore Videos
 
 </a>
+
+<a
+href="#mostviewed"
+class="btn btn-outline-light btn-lg">
+
+Trending Videos
+
+</a>
+
+</div>
 
 </div>
 
@@ -214,44 +216,11 @@ Explore spiritual journeys and temple stories
 
 <div class="row video-row">
 
-<?php
-
-if(
-    isset($_GET['search']) &&
-    trim($_GET['search']) != ''
-){
-
-    $search = mysqli_real_escape_string(
-        $conn,
-        trim($_GET['search'])
-    );
-
-    $query = "
-        SELECT * FROM videos
-        WHERE title LIKE '%$search%'
-        OR tagline LIKE '%$search%'
-        OR category LIKE '%$search%'
-        ORDER BY id DESC
-    ";
-
-}else{
-
-    $query = "
-        SELECT * FROM videos
-        ORDER BY id DESC
-    ";
-}
-
-$result = mysqli_query($conn, $query);
-
-while($row = mysqli_fetch_assoc($result)){
-
-?>
 
 <div class="col-lg-4 col-md-6">
 
 <a
-href="video.php?id=<?php echo (int)$row['id']; ?>"
+href="video.php?id=8"
 class="text-decoration-none">
 
 <div class="video-card">
@@ -259,8 +228,8 @@ class="text-decoration-none">
 <div class="thumbnail-box">
 
 <img
-src="uploads/<?php echo htmlspecialchars($row['thumbnail']); ?>"
-alt="<?php echo htmlspecialchars($row['title']); ?>">
+src="uploads/WhatsApp Image 2023-09-08 at 14.02.22 (1).jpeg"
+alt="गणेश पूजा की अद्भुत कहानी | प्रथम पूज्य भगवान गणेश">
 
 <div class="thumbnail-overlay"></div>
 
@@ -291,18 +260,14 @@ M
 
 <h5 class="video-title">
 
-<?php
-echo htmlspecialchars($row['title']);
-?>
-
+गणेश पूजा की अद्भुत कहानी | प्रथम पूज्य भगवान गणेश
 </h5>
 
 <div class="video-meta">
 
 MamtasBlogging<br>
 
-👁 <?php echo (int)$row['views']; ?>
-views
+👁 13views
 
 </div>
 
@@ -316,7 +281,331 @@ views
 
 </div>
 
-<?php } ?>
+
+<div class="col-lg-4 col-md-6">
+
+<a
+href="video.php?id=7"
+class="text-decoration-none">
+
+<div class="video-card">
+
+<div class="thumbnail-box">
+
+<img
+src="uploads/WhatsApp Image 2023-09-08 at 14.02.22 (2).jpeg"
+alt="कौन हैं भगवान विश्वकर्मा? | विश्वकर्मा पूजा विशेष">
+
+<div class="thumbnail-overlay"></div>
+
+<div class="play-btn">
+
+▶
+
+</div>
+
+<div class="video-duration">
+
+HD
+
+</div>
+
+</div>
+
+
+<div class="video-info">
+
+<div class="channel-logo">
+
+M
+
+</div>
+
+<div class="video-content">
+
+<h5 class="video-title">
+
+कौन हैं भगवान विश्वकर्मा? | विश्वकर्मा पूजा विशेष
+</h5>
+
+<div class="video-meta">
+
+MamtasBlogging<br>
+
+👁 38views
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</a>
+
+</div>
+
+
+<div class="col-lg-4 col-md-6">
+
+<a
+href="video.php?id=6"
+class="text-decoration-none">
+
+<div class="video-card">
+
+<div class="thumbnail-box">
+
+<img
+src="uploads/WhatsApp Image 2023-09-08 at 14.02.22.jpeg"
+alt="गया के महाबोधि मंदिर की अद्भुत कहानी | जहाँ बुद्ध को ज्ञान मिला">
+
+<div class="thumbnail-overlay"></div>
+
+<div class="play-btn">
+
+▶
+
+</div>
+
+<div class="video-duration">
+
+HD
+
+</div>
+
+</div>
+
+
+<div class="video-info">
+
+<div class="channel-logo">
+
+M
+
+</div>
+
+<div class="video-content">
+
+<h5 class="video-title">
+
+गया के महाबोधि मंदिर की अद्भुत कहानी | जहाँ बुद्ध को ज्ञान मिला
+</h5>
+
+<div class="video-meta">
+
+MamtasBlogging<br>
+
+👁 9views
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</a>
+
+</div>
+
+
+<div class="col-lg-4 col-md-6">
+
+<a
+href="video.php?id=4"
+class="text-decoration-none">
+
+<div class="video-card">
+
+<div class="thumbnail-box">
+
+<img
+src="uploads/WhatsApp Image 2023-09-08 at 14.02.24 (1).jpeg"
+alt="Rukmani Mata">
+
+<div class="thumbnail-overlay"></div>
+
+<div class="play-btn">
+
+▶
+
+</div>
+
+<div class="video-duration">
+
+HD
+
+</div>
+
+</div>
+
+
+<div class="video-info">
+
+<div class="channel-logo">
+
+M
+
+</div>
+
+<div class="video-content">
+
+<h5 class="video-title">
+
+Rukmani Mata
+</h5>
+
+<div class="video-meta">
+
+MamtasBlogging<br>
+
+👁 35views
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</a>
+
+</div>
+
+
+<div class="col-lg-4 col-md-6">
+
+<a
+href="video.php?id=3"
+class="text-decoration-none">
+
+<div class="video-card">
+
+<div class="thumbnail-box">
+
+<img
+src="uploads/WhatsApp Image 2023-09-08 at 14.02.26.jpeg"
+alt="Jatmai Mata">
+
+<div class="thumbnail-overlay"></div>
+
+<div class="play-btn">
+
+▶
+
+</div>
+
+<div class="video-duration">
+
+HD
+
+</div>
+
+</div>
+
+
+<div class="video-info">
+
+<div class="channel-logo">
+
+M
+
+</div>
+
+<div class="video-content">
+
+<h5 class="video-title">
+
+Jatmai Mata
+</h5>
+
+<div class="video-meta">
+
+MamtasBlogging<br>
+
+👁 13views
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</a>
+
+</div>
+
+
+<div class="col-lg-4 col-md-6">
+
+<a
+href="video.php?id=2"
+class="text-decoration-none">
+
+<div class="video-card">
+
+<div class="thumbnail-box">
+
+<img
+src="uploads/WhatsApp Image 2023-09-08 at 14.02.24 (1).jpeg"
+alt="Kanan Pendari">
+
+<div class="thumbnail-overlay"></div>
+
+<div class="play-btn">
+
+▶
+
+</div>
+
+<div class="video-duration">
+
+HD
+
+</div>
+
+</div>
+
+
+<div class="video-info">
+
+<div class="channel-logo">
+
+M
+
+</div>
+
+<div class="video-content">
+
+<h5 class="video-title">
+
+Kanan Pendari
+</h5>
+
+<div class="video-meta">
+
+MamtasBlogging<br>
+
+👁 1views
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</a>
+
+</div>
+
 
 </div>
 
@@ -343,24 +632,11 @@ Most viewed spiritual content
 
 <div class="row video-row">
 
-<?php
-
-$query2 = "
-    SELECT * FROM videos
-    ORDER BY views DESC
-    LIMIT 6
-";
-
-$result2 = mysqli_query($conn,$query2);
-
-while($row2 = mysqli_fetch_assoc($result2)){
-
-?>
 
 <div class="col-lg-4 col-md-6">
 
 <a
-href="video.php?id=<?php echo (int)$row2['id']; ?>"
+href="video.php?id=7"
 class="text-decoration-none">
 
 <div class="video-card">
@@ -368,8 +644,8 @@ class="text-decoration-none">
 <div class="thumbnail-box">
 
 <img
-src="uploads/<?php echo htmlspecialchars($row2['thumbnail']); ?>"
-alt="<?php echo htmlspecialchars($row2['title']); ?>">
+src="uploads/WhatsApp Image 2023-09-08 at 14.02.22 (2).jpeg"
+alt="कौन हैं भगवान विश्वकर्मा? | विश्वकर्मा पूजा विशेष">
 
 <div class="thumbnail-overlay"></div>
 
@@ -400,18 +676,14 @@ TRENDING
 
 <h5 class="video-title">
 
-<?php
-echo htmlspecialchars($row2['title']);
-?>
-
+कौन हैं भगवान विश्वकर्मा? | विश्वकर्मा पूजा विशेष
 </h5>
 
 <div class="video-meta">
 
 Trending Video<br>
 
-👁 <?php echo (int)$row2['views']; ?>
-views
+👁 38views
 
 </div>
 
@@ -425,7 +697,331 @@ views
 
 </div>
 
-<?php } ?>
+
+<div class="col-lg-4 col-md-6">
+
+<a
+href="video.php?id=4"
+class="text-decoration-none">
+
+<div class="video-card">
+
+<div class="thumbnail-box">
+
+<img
+src="uploads/WhatsApp Image 2023-09-08 at 14.02.24 (1).jpeg"
+alt="Rukmani Mata">
+
+<div class="thumbnail-overlay"></div>
+
+<div class="play-btn">
+
+▶
+
+</div>
+
+<div class="video-duration">
+
+TRENDING
+
+</div>
+
+</div>
+
+
+<div class="video-info">
+
+<div class="channel-logo">
+
+🔥
+
+</div>
+
+<div class="video-content">
+
+<h5 class="video-title">
+
+Rukmani Mata
+</h5>
+
+<div class="video-meta">
+
+Trending Video<br>
+
+👁 35views
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</a>
+
+</div>
+
+
+<div class="col-lg-4 col-md-6">
+
+<a
+href="video.php?id=3"
+class="text-decoration-none">
+
+<div class="video-card">
+
+<div class="thumbnail-box">
+
+<img
+src="uploads/WhatsApp Image 2023-09-08 at 14.02.26.jpeg"
+alt="Jatmai Mata">
+
+<div class="thumbnail-overlay"></div>
+
+<div class="play-btn">
+
+▶
+
+</div>
+
+<div class="video-duration">
+
+TRENDING
+
+</div>
+
+</div>
+
+
+<div class="video-info">
+
+<div class="channel-logo">
+
+🔥
+
+</div>
+
+<div class="video-content">
+
+<h5 class="video-title">
+
+Jatmai Mata
+</h5>
+
+<div class="video-meta">
+
+Trending Video<br>
+
+👁 13views
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</a>
+
+</div>
+
+
+<div class="col-lg-4 col-md-6">
+
+<a
+href="video.php?id=8"
+class="text-decoration-none">
+
+<div class="video-card">
+
+<div class="thumbnail-box">
+
+<img
+src="uploads/WhatsApp Image 2023-09-08 at 14.02.22 (1).jpeg"
+alt="गणेश पूजा की अद्भुत कहानी | प्रथम पूज्य भगवान गणेश">
+
+<div class="thumbnail-overlay"></div>
+
+<div class="play-btn">
+
+▶
+
+</div>
+
+<div class="video-duration">
+
+TRENDING
+
+</div>
+
+</div>
+
+
+<div class="video-info">
+
+<div class="channel-logo">
+
+🔥
+
+</div>
+
+<div class="video-content">
+
+<h5 class="video-title">
+
+गणेश पूजा की अद्भुत कहानी | प्रथम पूज्य भगवान गणेश
+</h5>
+
+<div class="video-meta">
+
+Trending Video<br>
+
+👁 13views
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</a>
+
+</div>
+
+
+<div class="col-lg-4 col-md-6">
+
+<a
+href="video.php?id=6"
+class="text-decoration-none">
+
+<div class="video-card">
+
+<div class="thumbnail-box">
+
+<img
+src="uploads/WhatsApp Image 2023-09-08 at 14.02.22.jpeg"
+alt="गया के महाबोधि मंदिर की अद्भुत कहानी | जहाँ बुद्ध को ज्ञान मिला">
+
+<div class="thumbnail-overlay"></div>
+
+<div class="play-btn">
+
+▶
+
+</div>
+
+<div class="video-duration">
+
+TRENDING
+
+</div>
+
+</div>
+
+
+<div class="video-info">
+
+<div class="channel-logo">
+
+🔥
+
+</div>
+
+<div class="video-content">
+
+<h5 class="video-title">
+
+गया के महाबोधि मंदिर की अद्भुत कहानी | जहाँ बुद्ध को ज्ञान मिला
+</h5>
+
+<div class="video-meta">
+
+Trending Video<br>
+
+👁 9views
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</a>
+
+</div>
+
+
+<div class="col-lg-4 col-md-6">
+
+<a
+href="video.php?id=2"
+class="text-decoration-none">
+
+<div class="video-card">
+
+<div class="thumbnail-box">
+
+<img
+src="uploads/WhatsApp Image 2023-09-08 at 14.02.24 (1).jpeg"
+alt="Kanan Pendari">
+
+<div class="thumbnail-overlay"></div>
+
+<div class="play-btn">
+
+▶
+
+</div>
+
+<div class="video-duration">
+
+TRENDING
+
+</div>
+
+</div>
+
+
+<div class="video-info">
+
+<div class="channel-logo">
+
+🔥
+
+</div>
+
+<div class="video-content">
+
+<h5 class="video-title">
+
+Kanan Pendari
+</h5>
+
+<div class="video-meta">
+
+Trending Video<br>
+
+👁 1views
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</a>
+
+</div>
+
 
 </div>
 
@@ -452,25 +1048,11 @@ Quick spiritual moments
 
 <div class="row video-row">
 
-<?php
-
-$short = mysqli_query(
-    $conn,
-    "
-    SELECT * FROM videos
-    WHERE category='Short Video'
-    ORDER BY id DESC
-    "
-);
-
-while($s = mysqli_fetch_assoc($short)){
-
-?>
 
 <div class="col-lg-4 col-md-6">
 
 <a
-href="video.php?id=<?php echo (int)$s['id']; ?>"
+href="video.php?id=7"
 class="text-decoration-none">
 
 <div class="video-card">
@@ -478,8 +1060,8 @@ class="text-decoration-none">
 <div class="thumbnail-box">
 
 <img
-src="uploads/<?php echo htmlspecialchars($s['thumbnail']); ?>"
-alt="<?php echo htmlspecialchars($s['title']); ?>">
+src="uploads/WhatsApp Image 2023-09-08 at 14.02.22 (2).jpeg"
+alt="कौन हैं भगवान विश्वकर्मा? | विश्वकर्मा पूजा विशेष">
 
 <div class="thumbnail-overlay"></div>
 
@@ -510,18 +1092,14 @@ S
 
 <h5 class="video-title">
 
-<?php
-echo htmlspecialchars($s['title']);
-?>
-
+कौन हैं भगवान विश्वकर्मा? | विश्वकर्मा पूजा विशेष
 </h5>
 
 <div class="video-meta">
 
 Short Video<br>
 
-👁 <?php echo (int)$s['views']; ?>
-views
+👁 38views
 
 </div>
 
@@ -535,7 +1113,71 @@ views
 
 </div>
 
-<?php } ?>
+
+<div class="col-lg-4 col-md-6">
+
+<a
+href="video.php?id=4"
+class="text-decoration-none">
+
+<div class="video-card">
+
+<div class="thumbnail-box">
+
+<img
+src="uploads/WhatsApp Image 2023-09-08 at 14.02.24 (1).jpeg"
+alt="Rukmani Mata">
+
+<div class="thumbnail-overlay"></div>
+
+<div class="play-btn">
+
+▶
+
+</div>
+
+<div class="video-duration">
+
+SHORT
+
+</div>
+
+</div>
+
+
+<div class="video-info">
+
+<div class="channel-logo">
+
+S
+
+</div>
+
+<div class="video-content">
+
+<h5 class="video-title">
+
+Rukmani Mata
+</h5>
+
+<div class="video-meta">
+
+Short Video<br>
+
+👁 35views
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</a>
+
+</div>
+
 
 </div>
 
@@ -565,7 +1207,7 @@ Follow Us
 </p>
 
 <a
-href="<?php echo $social['youtube']; ?>"
+href="https://youtube.com/"
 target="_blank"
 class="btn btn-danger">
 
@@ -574,7 +1216,7 @@ YouTube
 </a>
 
 <a
-href="<?php echo $social['facebook']; ?>"
+href="https://facebook.com/"
 target="_blank"
 class="btn btn-primary">
 
@@ -583,7 +1225,7 @@ Facebook
 </a>
 
 <a
-href="<?php echo $social['instagram']; ?>"
+href="https://instagram.com/"
 target="_blank"
 class="btn btn-dark">
 
@@ -593,8 +1235,7 @@ Instagram
 
 <p class="mt-4">
 
-© <?php echo date('Y'); ?>
-MamtasBlogging.
+© 2026MamtasBlogging.
 All Rights Reserved.
 
 </p>
